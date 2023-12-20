@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS bookmarks;
+DROP TABLE IF EXISTS topics;
+
+CREATE TABLE topics (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE bookmarks (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  url VARCHAR(255) NOT NULL,
+  description TEXT,
+  topic_id INTEGER REFERENCES topics(id) ON DELETE CASCADE
+);
