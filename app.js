@@ -4,9 +4,8 @@ import pool from './db.js';
 const app = express();
 const port = process.env.PORT || 8002;
 
+app.use(express.static('public'));
 app.use(express.json());
-
-app.set('view engine', 'ejs');
 
 app.get('/devresources', (req, res) => {
   pool.query('SELECT * FROM topics')
