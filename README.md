@@ -4,14 +4,13 @@ How to run a basic web page that utilizes a simple database using PostgreSQL, Ex
 # Basic Idea - My Bookmarks
 Make a website that hosts resources that you've accumulated so far from the Galvanize course.
 
-## Title Format - XYZ Resources
-Titles should be topics (i.e. Node Resources, Express Resources, PostgreSQL Resources, etc)
-**Each title will have to be it's own table**
+## Topics Table
+Topics should be titles (i.e. Node Resources, Express Resources, PostgreSQL Resources, etc)
+**Each title will have to have it's own id and title**
 
-### Paragraph Format - text & hyperlinks
-Above the hyperlink there should be a title for the hyperlink, or the hyperlink will have the title
-Under the Title there should be hyperlinks to access the content
-Bonus? A short description of what the hyperlink's content is that's input by the user and can be updated/changed.
+## Bookmarks Table
+There should be hyperlinks for the bookmarks that reference a certain topic in the Topics Table
+**Each bookmark needs it's own id, title, url, description, and referenced topic id**
 
 # CRUD - Create, Read, Update, & Destroy
 I'll need to add ways to create content by adding new content to the list
