@@ -32,6 +32,7 @@ app.post('/bookmarks', async (req, res) => {
   }
 });
 
+// Look up PUT method 
 app.patch('/bookmarks/:id', async (req, res) => {
   const bookmarkId = req.params.id;
   const { title, url, description, topic_id } = req.body;
