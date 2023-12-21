@@ -7,6 +7,17 @@ const port = process.env.PORT || 8002;
 app.use(express.static('public'));
 app.use(express.json());
 
+app.get('/topics', async (req, res) => {
+  try {
+    const data = await pool.query('SELECT * FROM topics');
+    res.status(200).send(data.rows);
+  }
+  catch (error) {
+    console.error(error);
+    res.status(500).send('Sorry');
+  }
+});
+
 app.get('/bookmarks', async (req, res) => {
   try {
     const data = await pool.query('SELECT * FROM bookmarks');
